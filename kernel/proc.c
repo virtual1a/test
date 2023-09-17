@@ -385,6 +385,14 @@ exit(int status)
   panic("zombie exit");
 }
 
+
+int
+trace(uint64 value)
+{
+  struct proc* p = myproc();
+  p->trace_func = value;
+}
+
 // Wait for a child process to exit and return its pid.
 // Return -1 if this process has no children.
 int
