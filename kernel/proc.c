@@ -386,7 +386,7 @@ exit(int status)
 }
 
 
-int
+void
 trace(uint64 value)
 {
   struct proc* p = myproc();
