@@ -32,7 +32,7 @@ sys_trace(void)
 {
   int n;
   argint(0, &n);
-  trace(n)
+  trace(n);
   return 0;
 }
 
