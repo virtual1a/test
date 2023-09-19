@@ -15,7 +15,7 @@ main(int argc, char *argv[])
   i = atoi(argv[1]);
 
   trace(i);
-  fprintf(2, "param 1 %s \n", ecmd->argv[0]);
+  fprintf(2, "param 1 %s \n", argv[0]);
   fprintf(2, "param 2 %s \n", (argv + 2)[0]);
   exec(argv[0], argv+2);
   trace(0);
