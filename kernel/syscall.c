@@ -169,7 +169,6 @@ syscall(void)
     p->trapframe->a0 = syscalls[num]();
 
     if ((trace & 1 << num) != 0) {
-    printf("trace id %d\n", trace);
     printf("syscall %s -> %d\n",
       traces[num], p->pid);
      }
