@@ -390,7 +390,9 @@ void
 trace(uint64 value)
 {
   struct proc* p = myproc();
+  acquire(&p->lock);
   p->trace_func = value;
+  release(&p->lock);
 }
 
 // Wait for a child process to exit and return its pid.
