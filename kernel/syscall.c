@@ -167,6 +167,7 @@ syscall(void)
     // Use num to lookup the system call function for num, call it,
     // and store its return value in p->trapframe->a0
     p->trapframe->a0 = syscalls[num]();
+    printf("trace id %d", trace);
     if ((trace & 1 << num) != 0) {
     printf("syscall %s -> %d\n",
       traces[num], p->pid);
