@@ -23,6 +23,6 @@ main(int argc, char *argv[])
   }else {
    
   }
-  wait(0);
+
   exit(0);
 }
