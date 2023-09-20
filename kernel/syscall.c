@@ -163,12 +163,12 @@ syscall(void)
   struct proc *p = myproc();
 
   num = p->trapframe->a7;
-  trace = p->trace_func;
+  
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
     // Use num to lookup the system call function for num, call it,
     // and store its return value in p->trapframe->a0
     p->trapframe->a0 = syscalls[num]();
-
+    trace = p->trace_func;
     if ((trace & 1 << num) != 0) {
     printf("syscall %s -> %d\n",
       traces[num], p->pid);
