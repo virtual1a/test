@@ -152,7 +152,8 @@ static char* traces[] = {
 "unlink",
 "link",
 "mkdir",
-"close"
+"close",
+"trace"
 };
 void
 syscall(void)
