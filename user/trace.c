@@ -21,7 +21,7 @@ main(int argc, char *argv[])
     trace(i);
     exec(argv[2], argv + 2);
   }else {
-    wait(0);
+
   }
 
   exit(0);
