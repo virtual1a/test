@@ -17,7 +17,12 @@ main(int argc, char *argv[])
   trace(i);
 //  fprintf(2, "param 1 %s \n", argv[2]);
   //fprintf(2, "param 2 %s \n", (argv + 2)[0]);
-  exec(argv[2], argv+2);
-  trace(0);
+  if (fork() == 0) {
+    exec(argv[2], argv + 2);
+  }else {
+    wait(0);
+    trace(0);
+  }
+
   exit(0);
 }
